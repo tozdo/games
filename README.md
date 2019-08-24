@@ -1,3 +1,3 @@
 # games
  
-just for fun
+Easy little games just for fun
