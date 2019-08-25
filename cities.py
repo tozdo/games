@@ -1,7 +1,7 @@
 import random
 
 list_bot = ['ты', 'вы', 'компьютер', 'бот']
-cities = ['Москва', 'Санкт-Петербург', 'Алматы', 'Грозный', 'Самара']
+cities = ['москва', 'санкт-петербург', 'алматы', 'грозный', 'самара']
 
 def last_letter(city):
     last = city[-1]
@@ -17,6 +17,8 @@ def game():
         user_city = input(bot_city + ' ')
     else:
         user_city = input('Загадывайте: ')
-    print(last_letter(user_city))
+
+    last = last_letter(user_city)
+    print([word for word in cities if word.startswith(last)])
 
 game()
