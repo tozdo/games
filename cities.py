@@ -20,15 +20,18 @@ def game():
         user_city = input('Ваш вариант: ')
 
     while True:
-        named_cities.append(user_city)
-        last = last_letter(user_city)
-        user_city = input(random.choice([word for word in cities if word.startswith(last)]) + ' ')
-        if user_city.lower() in ['устал', 'хватит', 'стоп']:
-            print('Спасибо за игру!')
-            break
-        elif user_city.lower() in named_cities:
-            print('Этот город уже был!')
-            continue
+        try:
+            named_cities.append(user_city)
+            last = last_letter(user_city)
+            user_city = input(random.choice([word for word in cities if word.startswith(last)]) + ' ')
+            if user_city.lower() in ['устал', 'хватит', 'стоп']:
+                print('Спасибо за игру!')
+                break
+            elif user_city.lower() in named_cities:
+                print('Этот город уже был!')
+                continue
+        except:
+            print('Извините, что-то пошло не так.')
 
 if __name__ == '__main__':
     game()
