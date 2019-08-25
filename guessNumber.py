@@ -10,7 +10,7 @@ def gameGuessing():
     try:
         while True:
             rndGuess = random.randint(min, max)
-            matching = input(str(rndGuess) + ' ')
+            matching = input(str(rndGuess) + ' ').lower()
             if matching == 'больше':
                 min = rndGuess + 1
             elif matching == 'меньше':
@@ -36,7 +36,7 @@ def gameCreating():
 
 def main():
     player1 = input('Кто будет загадывать: я или Вы? ')
-    if player1 in list_bot:
+    if player1.lower() in list_bot:
         gameCreating()
     else:
         gameGuessing()
